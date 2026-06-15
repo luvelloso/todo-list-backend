@@ -10,8 +10,6 @@ import schemas
 import auth
 import database
 
-models.Base.metadata.create_all(bind=database.engine)
-
 app = FastAPI(title="To-Do List API", version="1.0.0")
 
 app.add_middleware(

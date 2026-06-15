@@ -13,6 +13,8 @@ O backend oferece autenticação, cadastro de usuário, criação e listagem de 
 - `schemas.py` - define os modelos Pydantic de requisição/resposta
 - `auth.py` - funções de autenticação, hash de senha e geração de JWT
 - `database.py` - configuração do SQLAlchemy
+- `migrations/` - migrations do banco de dados com Alembic
+- `requirements.txt` - dependências do projeto
 - `todo.db` - arquivo SQLite gerado pelo backend
 
 ## Requisitos
@@ -23,9 +25,11 @@ O backend oferece autenticação, cadastro de usuário, criação e listagem de 
   - `fastapi`
   - `uvicorn`
   - `sqlalchemy`
+  - `alembic`
   - `pydantic[email]`
   - `bcrypt`
   - `PyJWT`
+  - `python-dotenv`
 
 ## Instalação
 
@@ -40,7 +44,13 @@ source venv/bin/activate
 2. Instale as dependências:
 
 ```bash
-pip install fastapi uvicorn sqlalchemy "pydantic[email]" bcrypt PyJWT
+pip install -r requirements.txt
+```
+
+3. Rode as migrations:
+
+```bash
+alembic upgrade head
 ```
 
 ## Executando
@@ -153,5 +163,5 @@ Use mensagens pequenas, claras e consistentes.
 
 ## Observações
 
-- A API usa SQLite local (`todo.db`), então o banco é gerado automaticamente na primeira execução.
-- Se mudar o esquema do modelo, pode ser necessário excluir `todo.db` para recriar a tabela.
+- A API usa SQLite local (`todo.db`).
+- Mudanças de esquema devem ser aplicadas com `alembic upgrade head`.
