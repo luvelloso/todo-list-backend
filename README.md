@@ -72,6 +72,7 @@ A API ficará disponível em `http://127.0.0.1:8000`.
 - `POST /todos`
   - Cria uma tarefa com:
     - `title`
+    - `description` (opcional)
     - `category` (`design`, `personal`, `house`, `work`, `health`)
     - `status` (`pending` ou `completed`)
     - `scheduled_date` (formato `YYYY-MM-DD`)
@@ -115,6 +116,7 @@ A API ficará disponível em `http://127.0.0.1:8000`.
 ```json
 {
   "title": "Tarefa exemplo",
+  "description": "Descrição opcional da tarefa",
   "category": "work",
   "status": "pending",
   "scheduled_date": "2026-06-15"

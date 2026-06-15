@@ -71,6 +71,7 @@ def create_todo(
 ):
     db_todo = models.Todo(
         title=todo.title,
+        description=todo.description,
         category=todo.category,
         status=todo.status,
         scheduled_date=todo.scheduled_date,

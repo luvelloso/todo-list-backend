@@ -30,6 +30,7 @@ class Todo(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String, index=True)
+    description = Column(String, nullable=True)
     category = Column(SQLEnum(TodoCategory), nullable=False)
     status = Column(SQLEnum(TodoStatus), default=TodoStatus.PENDING, nullable=False)
     
