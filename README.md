@@ -40,21 +40,7 @@ source venv/bin/activate
 2. Instale as dependências:
 
 ```bash
-pip install fastapi uvicorn sqlalchemy "pydantic[email]" bcrypt PyJWT python-dotenv
-```
-
-3. Crie o arquivo `.env` na raiz do backend (já existe um exemplo):
-
-```bash
-cp .env .env.local
-```
-
-4. Ajuste as variáveis no `.env.local` se quiser:
-
-```env
-SECRET_KEY=uma-chave-muito-secreta
-ALGORITHM=HS256
-ACCESS_TOKEN_EXPIRE_MINUTES=60
+pip install fastapi uvicorn sqlalchemy "pydantic[email]" bcrypt PyJWT
 ```
 
 ## Executando
